@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokemon</title>
+</head>
+<body>
+  <h1><%= pokemon.name %></h1>
+  <img src="<%= pokemon.sprites.front_default %>" alt="">
+  <audio controls>
+    <source src="<%= pokemon.cries.latest %>" type="audio/ogg">
+  </audio>
+  <audio controls>
+    <source src="<%= pokemon.cries.legacy %>" type="audio/ogg">
+  </audio>
+  <h2>Moves</h2>
+  <ul>
+    <% pokemon.moves.forEach((move) => { %>
+      <li><%= move.move.name %></li>
+    <% }) %>
+  </ul>
+  <h2>Types</h2>
+  <ul>
+    <% pokemon.types.forEach((type) => { %>
+      <li><%= type.type.name %></li>
+    <% }) %>
+  </ul>
+  <h2>Stats</h2>
+  <ul>
+    <% pokemon.stats.forEach((stat) => { %>
+      <li><%= stat.stat.name %>: <%= stat.base_stat %></li>
+    <% }) %>
+  </ul>
+</body>
+</html>

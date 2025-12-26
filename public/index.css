@@ -1,0 +1,16 @@
+.get-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e90ff, #ffd700);
+  background-repeat: no-repeat;
+}

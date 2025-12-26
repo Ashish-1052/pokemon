@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>hello pokemon world</h1>
+  <ul>
+    <form action="/pokemon" method="get">
+      <input type="text" name="name">
+      <button type="submit" class="submit-btn">Submit</button>
+      <% pokemon.forEach((pokemon)=> { %>
+        <li>
+          <button type="submit" name="pokemonUrl" value="<%= pokemon.url %>" class="get-btn">
+            <%= pokemon.name.toUpperCase() %>
+          </button>
+        </li>
+        <% }) %>
+    </form>
+  </ul>
+  <form action="/" method="get">
+    <% if (locals.previous) { %>
+      <button type="submit" class="submit-btn" name="pokemonPageUrl" value="<%= previous %>"
+        formaction="/">Back</button>
+    <% } %>
+    <% if (locals.next) { %>
+      <button type="submit" class="submit-btn" name="pokemonPageUrl" value="<%= next %>" formaction="/">Next</button>
+    <% } %>
+  </form>
+</body>
+
+</html>
